@@ -65,16 +65,12 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Select agricultural product name</h5>
+              <h5 class="card-title">Form action</h5>
 
               <form>
                 <div class="row mb-3">
                   <div class="col-sm-4">
-                    <select class="form-select" aria-label="Select name" v-model="nameProduct"
-                      v-on:change="CreateNewGeneration">
-                      <option v-for="(ele, index) in listData" :key="index" :item="ele" :index="index"
-                        v-bind:value="index + 1">{{ele.name}}</option>
-                    </select>
+                    <button class="btn btn-primary">Add new tradition</button>
                   </div>
                 </div>
 
@@ -87,23 +83,64 @@
       </div>
     </section>
 
-    <div v-show="nameProduct != 0">
-      <section class="section dashboard">
+    <div>
+      <section class="section">
         <div class="row">
-
-          <div class="col-lg-12">
+          <div class="col-24">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Future price prediction</h5>
-
-                <!-- Area Chart -->
-                <div id="PriceChart"></div>
-                <!-- End Area Chart -->
-
+                <h5 class="card-title">Your tradition</h5>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Getter</th>
+                      <th scope="col">Postter</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Tomato</td>
+                      <td>234</td>
+                      <td>Hota</td>
+                      <td>Metabit</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Oranges</td>
+                      <td>120</td>
+                      <td>Metabit</td>
+                      <td>YOLO</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Hot dogs</td>
+                      <td>9,390</td>
+                      <td>MineCraft</td>
+                      <td>MissTer</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>Sandwich</td>
+                      <td>10,390</td>
+                      <td>Tetla</td>
+                      <td>Megaver</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>Luck candy</td>
+                      <td>980</td>
+                      <td>KidsFun</td>
+                      <td>AngelGe</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -136,14 +173,14 @@
             <div class="card info-card sales-card">
 
               <div class="card-body">
-                <h5 class="card-title">Total time training <span>| 15 days data </span></h5>
+                <h5 class="card-title">Total block <span>| 15 days data </span></h5>
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                     <i class="bi bi-stopwatch-fill"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>{{ timeTraining }} Hour{{ (timeTraining > 1 ? 's' : '') }}</h6>
+                    <h6>{{ timeTraining }} block{{ (timeTraining > 1 ? '' : '') }}</h6>
 
                   </div>
                 </div>
@@ -156,14 +193,14 @@
             <div class="card info-card customers-card">
 
               <div class="card-body">
-                <h5 class="card-title">LOSS <span>| 15 days </span></h5>
+                <h5 class="card-title">Pay <span>| 15 days </span></h5>
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                     <i class="bi bi-stopwatch-fill"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>{{ LossValue }} %</h6>
+                    <h6>{{ LossValue }} USD</h6>
 
                   </div>
                 </div>
@@ -181,7 +218,7 @@
           <div class="col-lg-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Training overview</h5>
+                <h5 class="card-title">Overview</h5>
 
                 <!-- Area Chart -->
                 <div id="trainingOverview"></div>
@@ -194,7 +231,7 @@
           <div class="col-lg-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Data source</h5>
+                <h5 class="card-title">Source</h5>
 
                 <!-- Area Chart -->
                 <div id="sourceData"></div>
