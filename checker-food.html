@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Checker food - Bincase</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Vuejs -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+  <script>
+    $("#navbar").load("navbar.html");
+  </script>
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Checker food</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Food</li>
+          <li class="breadcrumb-item active">Checker</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Enter ID food</h5>
+
+              <form>
+                <div class="row mb-3">
+                  <div class="col-sm-4">
+                    <input class="form-control" type="text" placeholder="Enter ID food need to check" v-model="IDFood"
+                      v-on:change="CreateNewGeneration" />
+                  </div>
+                  <div class="col-sm-4">
+                    <button class="btn btn-primary" @click="CreateNewGeneration">Check</button>
+                    <button class="btn btn-success">QR code</button>
+                  </div>
+                </div>
+
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div v-show="IDFood != 0">
+      <section class="section">
+        <div class="row">
+          <div class="col-24">
+            <div class="input-group mb-3">
+              <span class="input-group-text">ID</span>
+              <input type="text" class="form-control" preadonly="true" value="FS001-TY0023-STT000003">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="row">
+          <div class="col-lg-24">
+            <div class="card pt-3">
+              <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+                <div class="timeline-step">
+                  <div class="timeline-content">
+                    <div class="inner-circle"></div>
+                    <p class="h6 mt-3 mb-1">26/06/2022 16:34</p>
+                    <p class="h6 text-muted mb-0 mb-lg-0">Food collection unit</p>
+                  </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-content">
+                    <div class="inner-circle"></div>
+                    <p class="h6 mt-3 mb-1">28/06/2022 20:12</p>
+                    <p class="h6 text-muted mb-0 mb-lg-0">Food quality control unit</p>
+                  </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-content">
+                    <div class="inner-circle"></div>
+                    <p class="h6 mt-3 mb-1">29/06/2022 8:12</p>
+                    <p class="h6 text-muted mb-0 mb-lg-0">Food delivery unit</p>
+                  </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-content">
+                    <div class="inner-circle"></div>
+                    <p class="h6 mt-3 mb-1">30/06/2022 12:22</p>
+                    <p class="h6 text-muted mb-0 mb-lg-0">Unit endpoint</p>
+                  </div>
+                </div>
+                <div class="timeline-step mb-0">
+                  <div class="timeline-content">
+                    <div class="inner-circle"></div>
+                    <p class="h6 mt-3 mb-1">??/??/2022 ??:??</p>
+                    <p class="h6 text-muted mb-0 mb-lg-0">User: not buy yet</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="row">
+
+          <div class="col-lg-24">
+            <div class="card">
+              <div class="row" style="justify-content: center;">
+                <img src="assets/img/card.jpg" class="card-img-top" alt="..." style="max-width: 30em;">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Information</h5>
+                <div class="row">
+                  <div class="col-3">
+                    Name:
+                  </div>
+                  <div class="col-9">
+                    Oranges
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                    Description:
+                  </div>
+                  <div class="col-9">
+                    This food is good for your healthy
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                    <i class="bi bi-inboxes"></i>
+                    Source food:
+                  </div>
+                  <div class="col-9">
+                    Vinh dragon
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                    <i class="bi bi-check-circle"></i>
+                    Food was checked by:
+                  </div>
+                  <div class="col-9">
+                    Black bullet
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                    <i class="bi bi-calendar-x"></i>
+                    Date expiration:
+                  </div>
+                  <div class="col-9">
+                    15/07/2022
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                    <i class="bi bi-box"></i>
+                    Network:
+                  </div>
+                  <div class="col-9">
+                    BSC
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                    <i class="bi bi-card-list"></i>
+                    List ID token:
+                  </div>
+                  <div class="col-9">
+                    0xB8c77482e45F1F44dE1745F52C74426C631bDD52, 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48, ...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </section>
+
+      <section class="section">
+        <div class="row">
+          <div class="col-24">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">5 Tradition nearest</h5>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Getter</th>
+                      <th scope="col">Postter</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Tomato</td>
+                      <td>234</td>
+                      <td>Hota</td>
+                      <td>Metabit</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Oranges</td>
+                      <td>120</td>
+                      <td>Metabit</td>
+                      <td>YOLO</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Hot dogs</td>
+                      <td>9,390</td>
+                      <td>MineCraft</td>
+                      <td>MissTer</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>Sandwich</td>
+                      <td>10,390</td>
+                      <td>Tetla</td>
+                      <td>Megaver</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>Luck candy</td>
+                      <td>980</td>
+                      <td>KidsFun</td>
+                      <td>AngelGe</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  </main><!-- End #main -->
+
+  <div id="footer"></div>
+  <script>
+    $("#footer").load("footer.html");
+  </script>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vuejs -->
+  <script>
+
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
