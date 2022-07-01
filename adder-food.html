@@ -266,7 +266,7 @@
     var vm = new Vue({
       el: '#main',
       data: {
-        nameProduct: "BSC",
+        nameProduct: "",
         bigData: 0,
         pesentData: 0,
         timeTraining: 0,
@@ -295,6 +295,10 @@
             values: []
           }
         }
+      },
+      created() {
+        this.nameProduct = "BSC";
+        this.CreateNewGeneration();
       },
       methods: {
         CreateNewGeneration: function () {
