@@ -102,35 +102,35 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
+                      <th scope="row">42</th>
                       <td>Tomato</td>
                       <td>234</td>
                       <td>Hota</td>
                       <td>Bincase</td>
                     </tr>
                     <tr>
-                      <th scope="row">2</th>
+                      <th scope="row">54</th>
                       <td>Oranges</td>
                       <td>120</td>
                       <td>Bincase</td>
                       <td>YOLO</td>
                     </tr>
                     <tr>
-                      <th scope="row">3</th>
+                      <th scope="row">76</th>
                       <td>Hot dogs</td>
                       <td>9,390</td>
                       <td>Bincase</td>
                       <td>MissTer</td>
                     </tr>
                     <tr>
-                      <th scope="row">4</th>
+                      <th scope="row">98</th>
                       <td>Sandwich</td>
                       <td>10,390</td>
                       <td>Bincase</td>
                       <td>Megaver</td>
                     </tr>
                     <tr>
-                      <th scope="row">5</th>
+                      <th scope="row">99</th>
                       <td>Luck candy</td>
                       <td>980</td>
                       <td>Bincase</td>
@@ -151,16 +151,16 @@
             <div class="card info-card revenue-card">
 
               <div class="card-body">
-                <h5 class="card-title">Data used <span>| 15 days</span></h5>
+                <h5 class="card-title">Total transactions<span>| 15 days</span></h5>
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                     <i class="bi bi-hdd-fill"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>{{ bigData }} GB</h6>
+                    <h6>{{ bigData }}</h6>
                     <span class="text-success small pt-1 fw-bold">{{ pesentData }}%</span> <span
-                      class="text-muted small pt-2 ps-1">total Data</span>
+                      class="text-muted small pt-2 ps-1">Total transactions</span>
 
                   </div>
                 </div>
@@ -193,7 +193,7 @@
             <div class="card info-card customers-card">
 
               <div class="card-body">
-                <h5 class="card-title">Totel paid <span>| 15 days </span></h5>
+                <h5 class="card-title">Total paid <span>| 15 days </span></h5>
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -295,7 +295,7 @@
             values: []
           },
           trainingOverview: {
-            name: ['CPU', 'GPU', 'RAM', 'MAGIC', 'KwH', 'HUMAN', 'SOURCE'],
+            name: ['Tomato', 'Watermelon', 'Fish', 'Meat', 'Sandwich', 'Luck candy', 'Oranges'],
             values: []
           }
         }
@@ -307,7 +307,7 @@
       methods: {
         CreateNewGeneration: function () {
           {
-            this.bigData = getRndInteger(234, 693254);
+            this.bigData = getRndInteger(234, 62054);
             this.pesentData = getRndInteger(1, 90);
             this.timeTraining = getRndInteger(1, 100);
             this.LossValue = getRndFoat(2, 5);
@@ -342,7 +342,7 @@
           var elG = this.chart.price;
           new ApexCharts(document.querySelector("#PriceChart"), {
             series: [{
-              name: "vnđ",
+              name: "USD",
               data: elG.values
             }],
             chart: {
